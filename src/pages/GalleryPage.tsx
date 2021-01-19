@@ -1,10 +1,11 @@
-import React, {FC, useEffect, useState} from "react";
+import React, {FC, useEffect} from "react";
 import axios from "axios";
+import {GridView} from "../components/GridView";
 
 interface Props {
 }
 
-export const GalleryPage: FC<Props> = (props: Props) => {
+export const GalleryPage: FC<Props> = () => {
     useEffect(() => {
         axios.post(
             "http://interview.agileengine.com/auth",
@@ -12,18 +13,19 @@ export const GalleryPage: FC<Props> = (props: Props) => {
                 apiKey: "23567b218376f79d9415"
             }
         ).then((res) => {
-                const {token } = res.data
+                const {token } = res.data;
                 localStorage.setItem('token', token);
             }
-        );
+        ).catch(() => {
+            alert("Please reload Home page to update your token")
+        });
 
     }, []);
-
 
     return (
         <div className="Page">
             <div className="header">Image gallery</div>
-
+            <GridView/>
         </div>
     );
 };
