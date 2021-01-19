@@ -24,7 +24,6 @@ export const PictureModal: FC<Props> = (props: Props) => {
             </div>
 
             <div className="modal-picture-container">
-
                 {pictureUrl &&
                 <div className="picture-container">
                         {pictureUrl &&

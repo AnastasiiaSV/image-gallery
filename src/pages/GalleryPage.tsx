@@ -2,10 +2,7 @@ import React, {FC, useEffect} from "react";
 import axios from "axios";
 import {GridView} from "../components/GridView";
 
-interface Props {
-}
-
-export const GalleryPage: FC<Props> = () => {
+export const GalleryPage: FC = () => {
     useEffect(() => {
         axios.post(
             "http://interview.agileengine.com/auth",

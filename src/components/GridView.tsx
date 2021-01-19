@@ -9,6 +9,7 @@ import axios from "axios";
 
 interface Props {
 }
+
 export const GridView: FC<Props> = () => {
 
     const [pictures, setPictures] = useState([]);
@@ -34,9 +35,7 @@ export const GridView: FC<Props> = () => {
 
                 setPicturesIds(currentPicturesIds);
                 localStorage.setItem("currentPicturesIds", JSON.stringify(currentPicturesIds));
-
             })
-
     }, []);
 
     const loadMore = () => {
@@ -48,8 +47,6 @@ export const GridView: FC<Props> = () => {
                 }
             })
             .then(response => {
-                //  console.log(response)
-
                 // @ts-ignore
                 setPictures(prevState => {
                     return [...prevState, ...response.data.pictures];
@@ -78,17 +75,15 @@ export const GridView: FC<Props> = () => {
 
                 {pictures &&
                 pictures.map((picture: any) =>
-                    <>
-                        <div className="gallery-item" key={picture.id} >
-                            {picture && picture.hasOwnProperty('cropped_picture') &&
-                            <Link to={`/picture/${picture.id}`}>
-                                <img src={picture.cropped_picture}
-                                     alt="picture"
-                                     className="gallery-item-picture"/>
-                            </Link>
-                            }
-                        </div>
-                    </>
+                    <div className="gallery-item" key={picture.id}>
+                        {picture && picture.hasOwnProperty('cropped_picture') &&
+                        <Link to={`/picture/${picture.id}`}>
+                            <img src={picture.cropped_picture}
+                                 alt="picture"
+                                 className="gallery-item-picture"/>
+                        </Link>
+                        }
+                    </div>
                 )
                 }
 

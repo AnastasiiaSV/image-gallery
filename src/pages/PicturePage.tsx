@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import {PictureModal} from "../components/PictureModal";
 import {InfoModal} from "../components/InfoModal";
 
-export const PicturePage: FC<[]> = () => {
+export const PicturePage: FC = () => {
 
     const {id}: { id: string; } = useParams();
     const picturesIds = JSON.parse(localStorage.getItem("currentPicturesIds") || "");
@@ -71,7 +71,6 @@ export const PicturePage: FC<[]> = () => {
                     <span className="control-element">
                           {'< back Home'}
                     </span>
-
                 </Link>
                 <span
                     className="control-element"
@@ -113,9 +112,6 @@ export const PicturePage: FC<[]> = () => {
                             </div>
 
                         </div>
-
-
-
                 </div>
                 }
 
