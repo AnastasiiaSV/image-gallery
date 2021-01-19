@@ -1,0 +1,17 @@
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: midnightblue;
+}
+.control-element{
+  padding: 3px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 3px;
+  text-decoration: none;
+  color: black;
+}
