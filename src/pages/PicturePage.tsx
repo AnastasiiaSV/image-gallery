@@ -106,7 +106,7 @@ export const PicturePage: FC = () => {
                             </div>
 
                             <div style={{marginTop: "5px"}} onClick={openUrlModalHandler}>
-                            <span className="control-element">
+                            <span className="light-control-element">
                                  Click here to share picture URL
                             </span>
                             </div>
